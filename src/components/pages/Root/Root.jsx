@@ -5,7 +5,7 @@ import Footer from '../../Footer/Footer'
 
 export default function Root() {
   return (
-    <div>
+    <div className='max-w-[1200px] mx-auto'>
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
