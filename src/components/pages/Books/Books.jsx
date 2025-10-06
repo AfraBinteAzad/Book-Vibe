@@ -18,8 +18,8 @@ useEffect(() => {
        <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
          {allbooks.map((book, bookId) => (
           
-         <Link to={'/BookDetails/${bookId}'}>
-          <div key={bookId} className='mt-4'>
+         <Link key={bookId} to={`/BookDetails/${book.bookId}`}>
+          <div  className='mt-4'>
           <div className="card bg-base-100 shadow-lg">
   <figure className="px-5 pt-5 ">
     <img
