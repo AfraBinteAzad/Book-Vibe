@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default function Navbar() {
   return (
@@ -23,10 +24,9 @@ export default function Navbar() {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 font-semibold text-gray-600">
-      <li><a>Home</a></li>
-      <li>
-        <a>Listed Books</a>
-      </li>
+      <Link to='/'> <li><a>Home</a></li></Link>
+      <Link to='/About'> <li><a>About</a></li></Link>
+      <li><a>Listed Books</a></li>
       <li><a>Pages to Read</a></li>
     </ul>
   </div>
