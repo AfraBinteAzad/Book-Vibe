@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router'
-import { toast } from 'react-toastify'
 import { addtostoredDB } from '../../utility/addToDb'
 import { addtowishdDB } from '../../utility/wishlistDb'
 
@@ -11,12 +10,10 @@ export default function BookDetails() {
   const data = useLoaderData()
   const single = data.find(book => book.bookId === Number(id))
   const notifymarked=(name,id)=>{
-    toast(`${name} is Marked as Read ${id}`)
     addtostoredDB(id)
   };
 
   const notifywish=(name,id)=>{
-    toast(`${name} is added to the Wishlist`)
     addtowishdDB(id)  
   }
 

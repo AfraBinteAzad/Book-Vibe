@@ -12,12 +12,9 @@ export default function Navbar() {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Home</a></li>
-        <li>
-          <a>Listed Books</a>
-          
-        </li>
-        <li><a>Pages to Read</a></li>
+          <Link to='/'> <li><a>Home</a></li></Link>
+     <Link to='/listedbooks'> <li><a>Listed Books</a></li></Link>
+     <Link to='/pagestoread'> <li><a>Pages to Read</a></li></Link>
       </ul>
     </div>
     <a className="btn btn-ghost text-xl font-bold">BookVibe</a>
@@ -25,9 +22,8 @@ export default function Navbar() {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 font-semibold text-gray-600">
       <Link to='/'> <li><a>Home</a></li></Link>
-      <Link to='/About'> <li><a>About</a></li></Link>
      <Link to='/listedbooks'> <li><a>Listed Books</a></li></Link>
-      <li><a>Pages to Read</a></li>
+     <Link to='/pagestoread'> <li><a>Pages to Read</a></li></Link>
     </ul>
   </div>
   <div className="navbar-end gap-2">
