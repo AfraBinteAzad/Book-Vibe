@@ -26,7 +26,7 @@ export default function Navbar() {
     <ul className="menu menu-horizontal px-1 font-semibold text-gray-600">
       <Link to='/'> <li><a>Home</a></li></Link>
       <Link to='/About'> <li><a>About</a></li></Link>
-      <li><a>Listed Books</a></li>
+     <Link to='/listedbooks'> <li><a>Listed Books</a></li></Link>
       <li><a>Pages to Read</a></li>
     </ul>
   </div>

@@ -1,5 +1,8 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router'
+import { toast } from 'react-toastify'
+import { addtostoredDB } from '../../utility/addToDb'
+import { addtowishdDB } from '../../utility/wishlistDb'
 
 export default function BookDetails() {
   const { id } = useParams() 
@@ -7,7 +10,15 @@ export default function BookDetails() {
 
   const data = useLoaderData()
   const single = data.find(book => book.bookId === Number(id))
-  console.log(single)
+  const notifymarked=(name,id)=>{
+    toast(`${name} is Marked as Read ${id}`)
+    addtostoredDB(id)
+  };
+
+  const notifywish=(name,id)=>{
+    toast(`${name} is added to the Wishlist`)
+    addtowishdDB(id)  
+  }
 
   return (
     <div className='max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 m-4'>
@@ -40,8 +51,8 @@ export default function BookDetails() {
     <p className='text-gray-500 font-medium'>Year of Publishing: <span className='font-bold text-black'> {single.yearOfPublishing}</span></p>
     <p className='text-gray-500 font-medium'>Rating: <span className='font-bold text-black'> {single.rating}</span></p>
     <div className='flex gap-3'>
-    <button className='border-1 font-bold border-gray-300 p-3 rounded-[10px]'>Read</button>
-    <button className='bg-[#50B1C9] text-white p-3 rounded-[10px]'>Wishlist</button>
+    <button onClick={()=>notifymarked(single.bookName,single.bookId)} className='border-1 font-bold border-gray-300 p-3 rounded-[10px]'>Mark As Read</button>
+    <button onClick={()=> notifywish(single.bookName,single.bookId)} className='bg-[#50B1C9] text-white p-3 rounded-[10px]'>Add To Wishlist</button>
     </div>
     </div>
     </div>
